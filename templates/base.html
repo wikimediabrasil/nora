@@ -1,0 +1,100 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon-dark.ico' %}" media="(prefers-color-scheme: dark)">
+    <title>{% block title %}{% endblock %} | {% translate "Ontology mapper" %}</title>
+    <link rel="stylesheet" type="text/css" href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/w3-css/4.1.0/3/w3.css" integrity="sha384-zpQzwZF+OVRAxiWJkCQZW1UDlFH8BLPIGgoUpGnOOpZ2anNSIam44l1uk0CkfD+5" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha384-SOnAn/m2fVJCwnbEYgD4xzrPtvsXdElhOVvR8ND1YjB5nhGNwwf7nBQlhfAwHAZC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://tools-static.wmflabs.org/fontcdn/css?family=Montserrat">
+    <link rel="stylesheet" href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha384-KZO2FRYNmIHerhfYMjCIUaJeGBRXP7CN24SiNSG+wdDzgwvxWbl16wMVtWiJTcMt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<nav class="navbar">
+    <div>
+        <h1 class="brand-title">
+            <a href="{% url 'home' %}" class="brand">
+                <img class="logo-light" alt="" src="{% static 'images/logo.svg' %}"/>
+                <img class="logo-dark" alt="" src="{% static 'images/logo-dark.svg' %}"/>
+                {% translate "NORA" %}
+            </a>
+        </h1>
+        <a href="{% url 'about' %}">{% translate "About" %}</a>
+        <a href="{% url 'list_ontologies' %}">{% translate "Ontologies" %}</a>
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="{% translate 'Toggle dark mode' %}" aria-expanded="false">
+            <i class="fa-solid fa-moon theme-moon"></i>
+            <i class="fa-solid fa-sun theme-sun"></i>
+        </button>
+        <form method="post" action="{% url 'set_language' %}" class="language-form">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.get_full_path }}">
+            <label for="language-select" title="{% translate 'Language' %}">
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+            </label>
+            <select id="language-select" name="language" aria-label="{% translate 'Language' %}" onchange="this.form.submit()">
+                {% for language in languages %}
+                    <option value="{{ language.code }}" lang="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>{{ language.name_local }}</option>
+                {% endfor %}
+            </select>
+            <noscript><button type="submit">{% translate "Change" %}</button></noscript>
+        </form>
+    </div>
+    <div>
+        {% if user.is_authenticated %}
+            <span style="" class="username" title="{% translate 'Logged user' %}">{% blocktranslate with username=user.username %}{{ username }}{% endblocktranslate %}</span>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">{% translate "Log out" %}</button>
+            </form>
+        {% else %}
+            <form method="post" action="{% url 'social:begin' 'mediawiki' %}">
+                {% csrf_token %}
+                {% if request.GET.next %}<input type="hidden" name="next" value="{{ request.GET.next }}">{% endif %}
+                <button type="submit">{% translate "Log in" %}</button>
+            </form>
+        {% endif %}
+    </div>
+</nav>
+<main class="w3-container">
+    {% if messages %}
+        <ul class="messages" role="status">
+            {% for message in messages %}
+                <li class="message message-{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+    <p>{% blocktranslate with url="https://meta.wikimedia.org/wiki/Wikimedia_Brasil" %}This application was developed by <a href="{{ url }}"><i>Wikimedia Brasil</i></a>.{% endblocktranslate %}</p>
+</footer>
+<script>
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+<script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha384-JnbsSLBmv2/R0fUmF2XYIcAEMPHEAO51Gitn9IjL4l89uFTIgtLF1+jqIqqd9FSk" crossorigin="anonymous"></script>
+<script>
+    $("select.tags").select2({ tags: true, tokenSeparators: [";"], width: "100%" });
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      const root = document.documentElement;
+      const isDark = root.dataset.theme
+        ? root.dataset.theme === "dark"
+        : matchMedia("(prefers-color-scheme: dark)").matches;
+      const next = isDark ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+</script>
+</body>
+</html>

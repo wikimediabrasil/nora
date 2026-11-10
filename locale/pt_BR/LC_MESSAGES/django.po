@@ -1,0 +1,1325 @@
+# Brazilian Portuguese translation for NORA.
+# Copyright (C) 2026 Wikimedia Brasil
+# This file is distributed under the same license as the NORA package.
+# Éder Porto <tecnologia@wmnobrasil.org>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: NORA 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-10 14:28-0300\n"
+"PO-Revision-Date: 2026-11-10 14:42-0300\n"
+"Last-Translator: Éder Porto <tecnologia@wmnobrasil.org>\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\mapper\forms.py:19 .\mapper\models.py:29
+msgid "Authorized usernames"
+msgstr "Nomes de usuário(a) autorizados"
+
+#: .\mapper\forms.py:20 .\mapper\models.py:29
+msgid "Usernames allowed to access this ontology"
+msgstr "Nomes de usuário(a) com acesso a esta ontologia"
+
+#: .\mapper\forms.py:28
+msgid "e.g. Museu Paulista postcards collection"
+msgstr "ex.: Coleção de cartões-postais do Museu Paulista"
+
+#: .\mapper\forms.py:29
+msgid "e.g. Museu Paulista"
+msgstr "ex.: Museu Paulista"
+
+#: .\mapper\forms.py:31
+msgid "Language code used to search Wikidata or Wikibase, e.g. en"
+msgstr "Código do idioma usado nas buscas no Wikidata ou no Wikibase, ex.: pt"
+
+#: .\mapper\forms.py:32
+msgid "API endpoint for the federated Wikibase, if not Wikidata"
+msgstr "Endpoint da API do Wikibase federado, se não for o Wikidata"
+
+#: .\mapper\forms.py:33 .\mapper\models.py:27
+msgid "SPARQL endpoint for the federated Wikibase, if not Wikidata"
+msgstr "Endpoint SPARQL do Wikibase federado, se não for o Wikidata"
+
+#: .\mapper\forms.py:36
+msgid ""
+"Map directly to Wikidata, or to your own Wikibase federated with Wikidata"
+msgstr ""
+"Mapeie diretamente para o Wikidata ou para o seu próprio Wikibase federado "
+"com o Wikidata"
+
+#: .\mapper\forms.py:37
+msgid ""
+"Private: only you. Restricted: you and the authorized usernames. Public: any "
+"logged user."
+msgstr ""
+"Privada: só você. Restrita: você e os nomes de usuário(a) autorizados. Pública: "
+"qualquer pessoa conectada."
+
+#: .\mapper\forms.py:59
+msgid "Required when the implementation mode is a federated Wikibase."
+msgstr "Obrigatório quando o modo de implementação é um Wikibase federado."
+
+#: .\mapper\forms.py:65
+msgid "CSV file"
+msgstr "Arquivo CSV"
+
+#: .\mapper\forms.py:66
+msgid ""
+"Columns: name, description, datatype, sample_value. Only name is required."
+msgstr ""
+"Colunas (em inglês): name, description, datatype, sample_value. Só name é obrigatória."
+
+#: .\mapper\models.py:13
+msgid "Wikidata"
+msgstr "Wikidata"
+
+#: .\mapper\models.py:14
+msgid "federated Wikibase"
+msgstr "Wikibase federado"
+
+#: .\mapper\models.py:17
+msgid "Public"
+msgstr "Pública"
+
+#: .\mapper\models.py:18
+msgid "Private"
+msgstr "Privada"
+
+#: .\mapper\models.py:19
+msgid "Restricted"
+msgstr "Restrita"
+
+#: .\mapper\models.py:21
+msgid "Title"
+msgstr "Título"
+
+#: .\mapper\models.py:21
+msgid "Ontology title"
+msgstr "Título da ontologia"
+
+#: .\mapper\models.py:22
+msgid "Institution"
+msgstr "Instituição"
+
+#: .\mapper\models.py:22
+msgid "Ontology institution"
+msgstr "Instituição da ontologia"
+
+#: .\mapper\models.py:23 .\mapper\models.py:100
+#: .\mapper\templates\detail_ontology.html:57
+msgid "Description"
+msgstr "Descrição"
+
+#: .\mapper\models.py:23
+msgid "Ontology description"
+msgstr "Descrição da ontologia"
+
+#: .\mapper\models.py:24
+msgid "Language"
+msgstr "Idioma"
+
+#: .\mapper\models.py:24
+msgid "Language code used to search Wikidata or Wikibase, e.g. pt, en, es"
+msgstr ""
+"Código do idioma usado nas buscas no Wikidata ou no Wikibase, ex.: pt, en, es"
+
+#: .\mapper\models.py:25
+msgid "Implementation mode"
+msgstr "Modo de implementação"
+
+#: .\mapper\models.py:26
+msgid "Wikibase API endpoint"
+msgstr "Endpoint da API do Wikibase"
+
+#: .\mapper\models.py:26
+msgid "e.g. https://my-wikibase.wikibase.cloud/w/api.php"
+msgstr "ex.: https://meu-wikibase.wikibase.cloud/w/api.php"
+
+#: .\mapper\models.py:27
+msgid "Wikibase SPARQL endpoint"
+msgstr "Endpoint SPARQL do Wikibase"
+
+#: .\mapper\models.py:28
+msgid "Visibility"
+msgstr "Visibilidade"
+
+#: .\mapper\models.py:32
+msgid "Created by"
+msgstr "Criada por"
+
+#: .\mapper\models.py:34
+msgid "Updated by"
+msgstr "Atualizada por"
+
+#: .\mapper\models.py:38 .\mapper\models.py:72
+msgid "Ontology"
+msgstr "Ontologia"
+
+#: .\mapper\models.py:39 .\mapper\templates\list_ontologies.html:3
+#: .\templates\base.html:30
+msgid "Ontologies"
+msgstr "Ontologias"
+
+#: .\mapper\models.py:72
+msgid "Ontology to be mapped"
+msgstr "Ontologia a ser mapeada"
+
+#: .\mapper\models.py:73
+msgid "Field name"
+msgstr "Nome do campo"
+
+#: .\mapper\models.py:73
+msgid "Ontology field name"
+msgstr "Nome do campo da ontologia"
+
+#: .\mapper\models.py:74
+msgid "Field description"
+msgstr "Descrição do campo"
+
+#: .\mapper\models.py:74
+msgid "Ontology field description"
+msgstr "Descrição do campo da ontologia"
+
+#: .\mapper\models.py:75
+msgid "Field example value"
+msgstr "Valor de exemplo do campo"
+
+#: .\mapper\models.py:75
+msgid "Ontology field example"
+msgstr "Exemplo do campo da ontologia"
+
+#: .\mapper\models.py:76
+msgid "Field datatype"
+msgstr "Tipo de dado do campo"
+
+#: .\mapper\models.py:76
+msgid "Ontology field datatype"
+msgstr "Tipo de dado do campo da ontologia"
+
+#: .\mapper\models.py:82 .\mapper\models.py:150
+msgid "Ontology field"
+msgstr "Campo da ontologia"
+
+#: .\mapper\models.py:83
+msgid "Ontology fields"
+msgstr "Campos da ontologia"
+
+#: .\mapper\models.py:97
+msgid "PID"
+msgstr "PID"
+
+#: .\mapper\models.py:97
+msgid "Wikidata property ID"
+msgstr "ID da propriedade no Wikidata"
+
+#: .\mapper\models.py:98
+msgid "API endpoint"
+msgstr "Endpoint da API"
+
+#: .\mapper\models.py:98
+msgid "Wikibase the property belongs to"
+msgstr "Wikibase ao qual a propriedade pertence"
+
+#: .\mapper\models.py:99
+msgid "Label"
+msgstr "Rótulo"
+
+#: .\mapper\models.py:99
+msgid "Wikidata property name"
+msgstr "Nome da propriedade no Wikidata"
+
+#: .\mapper\models.py:100
+msgid "Wikidata property value"
+msgstr "Valor da propriedade no Wikidata"
+
+#: .\mapper\models.py:101
+msgid "Datatype"
+msgstr "Tipo de dado"
+
+#: .\mapper\models.py:101
+msgid "Wikidata property type"
+msgstr "Tipo da propriedade no Wikidata"
+
+#: .\mapper\models.py:102
+msgid "Constraints"
+msgstr "Restrições"
+
+#: .\mapper\models.py:102
+msgid "Wikidata property constraints"
+msgstr "Restrições da propriedade no Wikidata"
+
+#: .\mapper\models.py:106
+msgid "Wikidata property"
+msgstr "Propriedade do Wikidata"
+
+#: .\mapper\models.py:107
+msgid "Wikidata properties"
+msgstr "Propriedades do Wikidata"
+
+#: .\mapper\models.py:134 .\mapper\templates\detail_ontology.html:70
+msgid "Pending"
+msgstr "Pendente"
+
+#: .\mapper\models.py:135
+msgid "Valid"
+msgstr "Válido"
+
+#: .\mapper\models.py:136 .\mapper\templates\review.html:71
+msgid "No equivalent"
+msgstr "Sem equivalente"
+
+#: .\mapper\models.py:137 .\mapper\templates\review.html:75
+msgid "Ambiguous"
+msgstr "Ambíguo"
+
+#: .\mapper\models.py:138 .\mapper\models.py:147
+msgid "Manual search"
+msgstr "Busca manual"
+
+#: .\mapper\models.py:139
+msgid "Gap"
+msgstr "Lacuna"
+
+#: .\mapper\models.py:143 .\mapper\templates\review.html:53
+msgid "Wikidata search"
+msgstr "Busca no Wikidata"
+
+#: .\mapper\models.py:144 .\mapper\templates\review.html:52
+msgid "Wikidata MCP"
+msgstr "MCP do Wikidata"
+
+#: .\mapper\models.py:145
+msgid "Consensus"
+msgstr "Consenso"
+
+#: .\mapper\models.py:146
+msgid "External AI"
+msgstr "IA externa"
+
+#: .\mapper\models.py:151 .\mapper\templates\detail_ontology.html:60
+msgid "Status"
+msgstr "Situação"
+
+#: .\mapper\models.py:153
+msgid "Suggested property"
+msgstr "Propriedade sugerida"
+
+#: .\mapper\models.py:154
+msgid "AI confidence score"
+msgstr "Grau de confiança da IA"
+
+#: .\mapper\models.py:155
+msgid "AI justification"
+msgstr "Justificativa da IA"
+
+#: .\mapper\models.py:157
+msgid "Property mapped"
+msgstr "Propriedade mapeada"
+
+#: .\mapper\models.py:158
+msgid "Chosen source"
+msgstr "Fonte escolhida"
+
+#: .\mapper\models.py:166
+msgid "Mapping decision"
+msgstr "Decisão de mapeamento"
+
+#: .\mapper\models.py:167
+msgid "Mapping decisions"
+msgstr "Decisões de mapeamento"
+
+#: .\mapper\models.py:186
+msgid "Decision"
+msgstr "Decisão"
+
+#: .\mapper\models.py:186
+msgid "Decision that was made"
+msgstr "Decisão tomada"
+
+#: .\mapper\models.py:188
+msgid "Chosen property"
+msgstr "Propriedade escolhida"
+
+#: .\mapper\models.py:193
+msgid "Mapping decision history"
+msgstr "Histórico da decisão de mapeamento"
+
+#: .\mapper\models.py:194
+msgid "Mapping decision histories"
+msgstr "Históricos das decisões de mapeamento"
+
+#: .\mapper\models.py:204
+msgid "Proposed label"
+msgstr "Rótulo proposto"
+
+#: .\mapper\models.py:204
+msgid "Proposed label for this property"
+msgstr "Rótulo proposto para esta propriedade"
+
+#: .\mapper\models.py:205 .\mapper\templates\review.html:113
+msgid "Proposed datatype"
+msgstr "Tipo de dado proposto"
+
+#: .\mapper\models.py:205
+msgid "Proposed datatype for this property"
+msgstr "Tipo de dado proposto para esta propriedade"
+
+#: .\mapper\models.py:206
+msgid "Justification"
+msgstr "Justificativa"
+
+#: .\mapper\models.py:206
+msgid "Justification for this property"
+msgstr "Justificativa para esta propriedade"
+
+#: .\mapper\models.py:207
+msgid "Submitted upstream"
+msgstr "Enviada ao Wikidata"
+
+#: .\mapper\models.py:207
+msgid "Submitted upstream for this property"
+msgstr "Indica se a proposta desta propriedade foi enviada ao Wikidata"
+
+#: .\mapper\models.py:212
+msgid "Property proposal"
+msgstr "Proposta de propriedade"
+
+#: .\mapper\models.py:213
+msgid "Property proposals"
+msgstr "Propostas de propriedade"
+
+#: .\mapper\models.py:216
+#, python-format
+msgid "Proposal: %(proposed_label)s"
+msgstr "Proposta: %(proposed_label)s"
+
+#: .\mapper\services\export_frictionless.py:37
+msgid "Wikidata item QID (empty when the item doesn't exist yet)"
+msgstr "QID do item no Wikidata (vazio quando o item ainda não existe)"
+
+#: .\mapper\services\export_frictionless.py:38
+msgid "PID of the property chosen during review"
+msgstr "PID da propriedade escolhida na revisão"
+
+#: .\mapper\services\export_frictionless.py:39
+msgid "Sample value taken from the institutional field"
+msgstr "Valor de exemplo do campo institucional"
+
+#: .\mapper\services\export_frictionless.py:40
+msgid "Name of the field in the source institutional ontology"
+msgstr "Nome do campo na ontologia institucional de origem"
+
+#: .\mapper\services\export_frictionless.py:52
+#, python-format
+msgid "Ontology mapping: %(name)s"
+msgstr "Mapeamento de ontologia: %(name)s"
+
+#: .\mapper\services\export_frictionless.py:54
+#, python-format
+msgid ""
+"Mapping of the fields of the institutional ontology of '%(institution)s' to "
+"Wikidata properties. Deployment mode: %(mode)s."
+msgstr ""
+"Mapeamento dos campos da ontologia institucional de '%(institution)s' para "
+"propriedades do Wikidata. Modo de implementação: %(mode)s."
+
+#: .\mapper\services\export_frictionless.py:79
+msgid "Status: not reviewed yet"
+msgstr "Situação: ainda não revisado"
+
+#: .\mapper\services\export_frictionless.py:81
+#, python-format
+msgid "Status: %(status)s"
+msgstr "Situação: %(status)s"
+
+#: .\mapper\services\export_frictionless.py:83
+#, python-format
+msgid "Chosen property: %(pid)s (%(label)s)"
+msgstr "Propriedade escolhida: %(pid)s (%(label)s)"
+
+#: .\mapper\services\export_frictionless.py:88
+#, python-format
+msgid "Choice source: %(source)s"
+msgstr "Fonte da escolha: %(source)s"
+
+#: .\mapper\services\export_frictionless.py:92
+#, python-format
+msgid "AI justification: %(justification)s"
+msgstr "Justificativa da IA: %(justification)s"
+
+#: .\mapper\services\export_frictionless.py:96
+#, python-format
+msgid "Gap recorded: proposal '%(label)s' (%(datatype)s), draft in %(path)s"
+msgstr ""
+"Lacuna registrada: proposta '%(label)s' (%(datatype)s), rascunho em %(path)s"
+
+#: .\mapper\services\export_frictionless.py:106
+#, python-format
+msgid "Mapping report: %(name)s"
+msgstr "Relatório de mapeamento: %(name)s"
+
+#: .\mapper\services\export_frictionless.py:108
+#, python-format
+msgid "Institution: %(institution)s"
+msgstr "Instituição: %(institution)s"
+
+#: .\mapper\services\export_frictionless.py:109
+#, python-format
+msgid "Deployment mode: %(mode)s"
+msgstr "Modo de implementação: %(mode)s"
+
+#: .\mapper\services\export_frictionless.py:110
+#, python-format
+msgid "Generated at: %(created)s"
+msgstr "Gerado em: %(created)s"
+
+#: .\mapper\services\export_frictionless.py:112
+msgid "Decisions by field"
+msgstr "Decisões por campo"
+
+#: .\mapper\services\export_frictionless.py:122
+#, python-format
+msgid "Description: %(description)s"
+msgstr "Descrição: %(description)s"
+
+#: .\mapper\services\export_frictionless.py:123
+msgid "(no description)"
+msgstr "(sem descrição)"
+
+#: .\mapper\services\export_frictionless.py:129
+msgid "Validation warnings (left out of the CSV)"
+msgstr "Avisos de validação (deixados de fora do CSV)"
+
+#: .\mapper\services\review.py:89
+msgid "Could not reach Wikidata. Try again in a few minutes."
+msgstr ""
+"Não foi possível acessar o Wikidata. Tente novamente em alguns minutos."
+
+#: .\mapper\services\validation.py:49
+msgid "Decision marked as valid but no property was chosen."
+msgstr "Decisão marcada como válida, mas nenhuma propriedade foi escolhida."
+
+#: .\mapper\services\validation.py:58
+#, python-format
+msgid ""
+"Incompatible datatype: the source field is '%(source)s', but %(pid)s "
+"(%(label)s) expects '%(expected)s'."
+msgstr ""
+"Tipo de dado incompatível: o campo de origem é '%(source)s', mas %(pid)s "
+"(%(label)s) espera '%(expected)s'."
+
+#: .\mapper\services\validation.py:69
+#, python-format
+msgid "Sample value '%(value)s' is not among the allowed values for %(pid)s."
+msgstr ""
+"O valor de exemplo '%(value)s' não está entre os valores permitidos para "
+"%(pid)s."
+
+#: .\mapper\services\validation.py:75
+#, python-format
+msgid ""
+"Sample value '%(value)s' does not match the expected format for %(pid)s."
+msgstr ""
+"O valor de exemplo '%(value)s' não corresponde ao formato esperado para "
+"%(pid)s."
+
+#: .\mapper\templates\about.html:7
+msgid "About NORA"
+msgstr "Sobre a NORA"
+
+#: .\mapper\templates\about.html:8
+msgid ""
+"<b>N</b>exus of <b>O</b>ntologies with <b>R</b>econciliation <b>A</"
+"b>ssistance"
+msgstr ""
+"<b>N</b>exo de <b>O</b>ntologias com <b>R</b>econciliação <b>A</b>ssistida"
+
+#: .\mapper\templates\about.html:10
+msgid "Why NORA exists"
+msgstr "Por que a NORA existe"
+
+#: .\mapper\templates\about.html:11
+msgid ""
+"Museums, archives, libraries and research centres that want to share their "
+"collections on Wikidata first have to map the fields of their own metadata "
+"ontologies to Wikidata properties. Today this is done by hand, and it "
+"depends on advanced knowledge of Wikidata search and modeling."
+msgstr ""
+"Museus, arquivos, bibliotecas e centros de pesquisa que querem compartilhar "
+"seus acervos no Wikidata precisam, antes, mapear os campos das suas próprias "
+"ontologias de metadados para propriedades do Wikidata. Hoje esse trabalho é "
+"manual e depende de conhecimento avançado de busca e modelagem no Wikidata."
+
+#: .\mapper\templates\about.html:12
+msgid "NORA was built to address four recurring problems:"
+msgstr "A NORA foi criada para enfrentar quatro problemas recorrentes:"
+
+#: .\mapper\templates\about.html:14
+msgid ""
+"<b>A steep learning curve</b>, which limits the autonomy of institutions and "
+"can raise their costs."
+msgstr ""
+"<b>Uma curva de aprendizado íngreme</b>, que limita a autonomia das "
+"instituições e pode aumentar seus custos."
+
+#: .\mapper\templates\about.html:15
+msgid ""
+"<b>Modeling gaps that go unreported</b>: when no property fits, institutions "
+"tend to settle for an incomplete model, with no channel to raise the gap."
+msgstr ""
+"<b>Lacunas de modelagem que não são relatadas</b>: quando nenhuma "
+"propriedade serve, as instituições tendem a aceitar um modelo incompleto, "
+"sem um canal para apontar a lacuna."
+
+#: .\mapper\templates\about.html:16
+msgid ""
+"<b>Decisions that are not reused</b>: each new mapping usually starts from "
+"scratch."
+msgstr ""
+"<b>Decisões que não são reaproveitadas</b>: cada novo mapeamento costuma "
+"começar do zero."
+
+#: .\mapper\templates\about.html:17
+msgid ""
+"<b>Structural errors</b>: without checking datatypes and constraints, wrong "
+"mappings reach batch-editing tools."
+msgstr ""
+"<b>Erros estruturais</b>: sem a verificação de tipos de dado e restrições, "
+"mapeamentos incorretos chegam às ferramentas de edição em lote."
+
+#: .\mapper\templates\about.html:20
+msgid "How AI is used, and how it is not"
+msgstr "Como a IA é usada, e como não é"
+
+#: .\mapper\templates\about.html:21
+msgid ""
+"Candidate properties come from a live search on Wikidata (or on your own "
+"Wikibase) and, optionally, from the Wikidata MCP. AI help is only called "
+"when the reviewer asks for it, with the reviewer's own key, and it can only "
+"choose among the candidates already on screen. Its justification is always "
+"shown next to its suggestion."
+msgstr ""
+"As propriedades candidatas vêm de uma busca em tempo real no Wikidata (ou "
+"no seu próprio Wikibase) e, opcionalmente, do MCP do Wikidata. A IA só é "
+"acionada quando quem revisa pede, com a própria chave, e só pode escolher "
+"entre as candidatas que já estão na tela. A justificativa dela é sempre "
+"exibida ao lado da sugestão."
+
+#: .\mapper\templates\about.html:22
+msgid ""
+"<b>Every decision is made by a person.</b> No mapping is accepted, rejected "
+"or exported without human review."
+msgstr ""
+"<b>Toda decisão é tomada por uma pessoa.</b> Nenhum mapeamento é aceito, "
+"rejeitado ou exportado sem revisão humana."
+
+#: .\mapper\templates\about.html:24
+msgid "Wikimedia Brasil's Plan of Activities"
+msgstr "Plano de Atividades da Wikimedia Brasil"
+
+#: .\mapper\templates\about.html:25
+msgid ""
+"NORA is part of the deliverable <i><a href=\"https://meta.wikimedia.org/wiki/"
+"Wikimedia_Brasil/Plan_of_Activities_2026#AI_Integration_for_Wikimedia\" "
+"title=\"Wikimedia Brasil Plan of activities\">AI Integration for Wikimedia</"
+"a></i>, in Wikimedia Brasil's Plan of Activities for 2026. The deliverable "
+"looks at the risks and potential of using AI in smaller-scale Wikimedia "
+"projects, keeping human oversight at the centre of the editorial process."
+msgstr ""
+"A NORA faz parte da entrega <i><a href=\"https://meta.wikimedia.org/wiki/"
+"Wikimedia_Brasil/Plan_of_Activities_2026#AI_Integration_for_Wikimedia\" "
+"title=\"Plano de Atividades da Wikimedia Brasil\">Integração de IA para a "
+"Wikimedia</a></i>, do Plano de Atividades de 2026 da Wikimedia Brasil. A "
+"entrega analisa os riscos e o potencial do uso de IA em projetos Wikimedia "
+"de menor escala, mantendo a supervisão humana no centro do processo "
+"editorial."
+
+#: .\mapper\templates\about.html:27
+msgid "The technical development plan"
+msgstr "O plano técnico de desenvolvimento"
+
+#: .\mapper\templates\about.html:28
+#, python-format
+msgid ""
+"NORA follows a <a href=\"%(url)s\">technical development plan</a> that "
+"defines its scope and safeguards:"
+msgstr ""
+"A NORA segue um <a href=\"%(url)s\">plano técnico de desenvolvimento</a> que "
+"define seu escopo e suas salvaguardas:"
+
+#: .\mapper\templates\about.html:30
+msgid ""
+"<b>Mandatory human review</b> of every field, with five options: valid, no "
+"equivalent, ambiguous, manual search and modeling gap."
+msgstr ""
+"<b>Revisão humana obrigatória</b> de cada campo, com cinco opções: válido, "
+"sem equivalente, ambíguo, busca manual e lacuna de modelagem."
+
+#: .\mapper\templates\about.html:31
+msgid ""
+"<b>Modeling gaps become property proposal drafts</b>, with the justification "
+"written by the reviewer, never by the AI."
+msgstr ""
+"<b>Lacunas de modelagem viram rascunhos de proposta de propriedade</b>, com "
+"a justificativa escrita por quem revisa, nunca pela IA."
+
+#: .\mapper\templates\about.html:32
+msgid ""
+"<b>Structural validation</b> of datatypes and constraints before export."
+msgstr ""
+"<b>Validação estrutural</b> de tipos de dado e restrições antes da "
+"exportação."
+
+#: .\mapper\templates\about.html:33
+msgid ""
+"<b>Two deployment modes</b>: mapping directly to Wikidata, or to an "
+"institution's own Wikibase, federated with Wikidata."
+msgstr ""
+"<b>Dois modos de implementação</b>: mapeamento direto para o Wikidata ou "
+"para o Wikibase da própria instituição, federado com o Wikidata."
+
+#: .\mapper\templates\about.html:34
+msgid ""
+"<b>Open, interoperable export</b>: a Frictionless Data package compatible "
+"with QuickStatements and OpenRefine."
+msgstr ""
+"<b>Exportação aberta e interoperável</b>: um pacote Frictionless Data "
+"compatível com o QuickStatements e o OpenRefine."
+
+#: .\mapper\templates\about.html:37
+msgid "AI-BRIDGES"
+msgstr "AI-BRIDGES"
+
+#: .\mapper\templates\about.html:38
+msgid ""
+"NORA is also developed as part of Wikimedia Brasil's activities on AI-"
+"BRIDGES, a collaborative research project that connects institutions, open "
+"knowledge infrastructures and AI systems, turning shared challenges into "
+"practical workflows and tools. Its pillars are research through practice, "
+"holistic and multilingual data practices, collaboration through partnerships "
+"(institutions as partners, not data sources), and the long-term stewardship "
+"of knowledge as a commons."
+msgstr ""
+"A NORA também é desenvolvida como parte das atividades da Wikimedia Brasil "
+"no AI-BRIDGES, um projeto de pesquisa colaborativo que conecta instituições, "
+"infraestruturas de conhecimento aberto e sistemas de IA, transformando "
+"desafios comuns em fluxos de trabalho e ferramentas práticas. Seus pilares "
+"são a pesquisa pela prática, práticas de dados holísticas e multilíngues, a "
+"colaboração por meio de parcerias (instituições como parceiras, e não como "
+"fontes de dados) e a gestão de longo prazo do conhecimento como bem comum."
+
+#: .\mapper\templates\about.html:39
+msgid ""
+"Within AI-BRIDGES, NORA follows three requirements: the sovereignty of human "
+"curation, learning from past decisions, and making visible the structural "
+"gaps of Wikidata for ontologies from the Global South."
+msgstr ""
+"No AI-BRIDGES, a NORA segue três requisitos: a soberania da curadoria "
+"humana, o aprendizado com decisões anteriores e a visibilidade das lacunas "
+"estruturais do Wikidata para ontologias do Sul Global."
+
+#: .\mapper\templates\about.html:40
+msgid ""
+"The specific idea for NORA came from one of the round tables at the AI-"
+"BRIDGES Symposium, in May 2026."
+msgstr ""
+"A ideia específica da NORA surgiu em uma das mesas-redondas do Simpósio AI-"
+"BRIDGES, em maio de 2026."
+
+#: .\mapper\templates\about.html:42
+msgid "CDTIC"
+msgstr "CDTIC"
+
+#: .\mapper\templates\about.html:43
+msgid ""
+"NORA also connects to Wikimedia Brasil's work at the Centre for Digitisation "
+"and Intelligent Treatment of Collections (CDTIC), supported by FAPESP. "
+"There, Wikimedia Brasil develops a roundtripping workflow between collection "
+"data and the Wikimedia projects, carried forward in the Plan of Activities "
+"as the deliverable <a href=\"https://w.wiki/gqyV\" title=\"WMB Collections "
+"Intelligence main delivery page\">Collections Intelligence</a>."
+msgstr ""
+"A NORA também se conecta ao trabalho da Wikimedia Brasil no Centro de "
+"Digitalização e Tratamento Inteligente de Coleções (CDTIC), apoiado pela "
+"FAPESP. Lá, a Wikimedia Brasil desenvolve um fluxo de roundtripping "
+"entre os dados de acervo e os projetos Wikimedia, que continua no Plano de "
+"Atividades como a entrega <a href=\"https://w.wiki/gqyV\" title=\"Página "
+"principal da entrega Inteligência de Coleções da WMB\">Inteligência de "
+"Coleções</a>."
+
+#: .\mapper\templates\about.html:44
+msgid ""
+"Mapping an institution's ontology schema to Wikidata is the first step of "
+"any roundtripping, and it is usually done by hand, field by field. NORA "
+"turns that step into a reviewable process: the museum's own team decides on "
+"each mapping, the decisions are recorded and reused, and the fields with no "
+"equivalent in Wikidata are documented as modeling gaps rather than forced "
+"into ill-fitting properties. The federated Wikibase mode fits institutions "
+"that want to keep their data under their own stewardship while staying "
+"linked to Wikidata."
+msgstr ""
+"Mapear o esquema de ontologia de uma instituição para o Wikidata é o "
+"primeiro passo de qualquer roundtripping, e costuma ser feito à mão, "
+"campo a campo. A NORA transforma essa etapa em um processo revisável: a "
+"própria equipe do museu decide cada mapeamento, as decisões ficam "
+"registradas e são reaproveitadas, e os campos sem equivalente no Wikidata "
+"são documentados como lacunas de modelagem, em vez de forçados em "
+"propriedades inadequadas. O modo Wikibase federado atende instituições que "
+"querem manter seus dados sob a própria gestão, ligados ao Wikidata."
+
+#: .\mapper\templates\about.html:46
+msgid "Who maintains it"
+msgstr "Quem mantém"
+
+#: .\mapper\templates\about.html:47
+msgid ""
+"NORA is open source and maintained by Wikimedia Brasil's Products and "
+"Technology team. Bug reports, feature requests and contributions from "
+"community developers are welcome."
+msgstr ""
+"A NORA tem código aberto e é mantida pela equipe de Produtos e Tecnologia "
+"da Wikimedia Brasil. Relatos de erros, pedidos de funcionalidades e "
+"contribuições de pessoas desenvolvedoras da comunidade são bem-vindos."
+
+#: .\mapper\templates\about.html:51
+#, python-format
+msgid ""
+"This app was developed in <a target=\"_blank\" rel=\"noopener\" "
+"href=\"%(url)s\"><i>Django</i></a>."
+msgstr ""
+"Este aplicativo foi desenvolvido em <a target=\"_blank\" rel=\"noopener\" "
+"href=\"%(url)s\"><i>Django</i></a>."
+
+#: .\mapper\templates\about.html:52
+#, python-format
+msgid ""
+"The source code is available on <a target=\"_blank\" rel=\"noopener\" "
+"href=\"%(url)s\">GitHub</a>."
+msgstr ""
+"O código-fonte está disponível no <a target=\"_blank\" rel=\"noopener\" "
+"href=\"%(url)s\">GitHub</a>."
+
+#: .\mapper\templates\about.html:53
+#, python-format
+msgid ""
+"Source code license: <a target=\"_blank\" rel=\"noopener\" "
+"href=\"%(url)s\">MIT</a>."
+msgstr ""
+"Licença do código-fonte: <a target=\"_blank\" rel=\"noopener\" "
+"href=\"%(url)s\">MIT</a>."
+
+#: .\mapper\templates\about.html:54
+#, python-format
+msgid ""
+"Text license: <a target=\"_blank\" rel=\"noopener\" href=\"%(url)s\">CC BY-"
+"SA 4.0 International</a>."
+msgstr ""
+"Licença dos textos: <a target=\"_blank\" rel=\"noopener\" "
+"href=\"%(url)s\">CC BY-SA 4.0 Internacional</a>."
+
+#: .\mapper\templates\about.html:55
+#, python-format
+msgid ""
+"Wikidata data license: <a target=\"_blank\" rel=\"noopener\" "
+"href=\"%(url)s\">CC0</a>."
+msgstr ""
+"Licença dos dados do Wikidata: <a target=\"_blank\" rel=\"noopener\" "
+"href=\"%(url)s\">CC0</a>."
+
+#: .\mapper\templates\about.html:56
+#, python-format
+msgid "Version %(version)s."
+msgstr "Versão %(version)s."
+
+#: .\mapper\templates\detail_ontology.html:11
+#, python-format
+msgid "Created on %(created)s by %(by)s"
+msgstr "Criada em %(created)s por %(by)s"
+
+#: .\mapper\templates\detail_ontology.html:11
+#, python-format
+msgid "Created on %(created)s"
+msgstr "Criada em %(created)s"
+
+#: .\mapper\templates\detail_ontology.html:11
+#, python-format
+msgid "Updated on %(updated)s by %(by)s"
+msgstr "Atualizada em %(updated)s por %(by)s"
+
+#: .\mapper\templates\detail_ontology.html:11
+#, python-format
+msgid "Updated on %(updated)s"
+msgstr "Atualizada em %(updated)s"
+
+#: .\mapper\templates\detail_ontology.html:21
+msgid "SPARQL endpoint:"
+msgstr "Endpoint SPARQL:"
+
+#: .\mapper\templates\detail_ontology.html:26
+msgid "Review fields"
+msgstr "Revisar campos"
+
+#: .\mapper\templates\detail_ontology.html:29
+#: .\mapper\templates\import_fields.html:7
+msgid "Import fields"
+msgstr "Importar campos"
+
+#: .\mapper\templates\detail_ontology.html:32
+msgid "Export ontology"
+msgstr "Exportar ontologia"
+
+#: .\mapper\templates\detail_ontology.html:35
+msgid "Edit ontology"
+msgstr "Editar ontologia"
+
+#: .\mapper\templates\detail_ontology.html:38
+msgid ""
+"Erase all decisions of this ontology and put every field back in the review "
+"queue? This cannot be undone!"
+msgstr ""
+"Apagar todas as decisões desta ontologia e devolver todos os campos à fila "
+"de revisão? Esta ação não pode ser desfeita!"
+
+#: .\mapper\templates\detail_ontology.html:40
+msgid "Reset decisions"
+msgstr "Redefinir decisões"
+
+#: .\mapper\templates\detail_ontology.html:44
+msgid "Delete this ontology and all its decisions? This cannot be undone!"
+msgstr ""
+"Excluir esta ontologia e todas as suas decisões? Esta ação não pode ser "
+"desfeita!"
+
+#: .\mapper\templates\detail_ontology.html:46
+#: .\mapper\templates\ontology_list_item.html:17
+msgid "Delete"
+msgstr "Excluir"
+
+#: .\mapper\templates\detail_ontology.html:51
+#: .\mapper\templates\ontology_list_item.html:7
+#, python-format
+msgid "%(total)s field"
+msgid_plural "%(total)s fields"
+msgstr[0] "%(total)s campo"
+msgstr[1] "%(total)s campos"
+
+#: .\mapper\templates\detail_ontology.html:54
+msgid "Fields table"
+msgstr "Tabela de campos"
+
+#: .\mapper\templates\detail_ontology.html:56
+msgid "Field"
+msgstr "Campo"
+
+#: .\mapper\templates\detail_ontology.html:58
+msgid "Type"
+msgstr "Tipo"
+
+#: .\mapper\templates\detail_ontology.html:59
+msgid "Example"
+msgstr "Exemplo"
+
+#: .\mapper\templates\detail_ontology.html:61
+msgid "Property"
+msgstr "Propriedade"
+
+#: .\mapper\templates\detail_ontology.html:62
+msgid "Actions"
+msgstr "Ações"
+
+#: .\mapper\templates\detail_ontology.html:76
+#: .\mapper\templates\ontology_list_item.html:14
+msgid "Review"
+msgstr "Revisar"
+
+#: .\mapper\templates\detail_ontology.html:82
+msgid "This ontology has no fields yet."
+msgstr "Esta ontologia ainda não tem campos."
+
+#: .\mapper\templates\home.html:10
+msgid ""
+"<b>N.O.R.A.</b> (<b>N</b>exus of <b>O</b>ntologies with <b>R</"
+"b>econciliation <b>A</b>ssistance) is a web application that helps one map "
+"ontologies to a Wikibase instance, such as Wikidata, combining live search "
+"on Wikidata with optional semantic search through the Wikidata MCP and "
+"optional AI assistance, to suggest matching properties for human review."
+msgstr ""
+"<b>N.O.R.A.</b> (<b>N</b>exo de <b>O</b>ntologias com <b>R</b>econciliação "
+"<b>A</b>ssistida) é uma aplicação web que ajuda a mapear ontologias para uma "
+"instância Wikibase, como o Wikidata, combinando a busca em tempo real no "
+"Wikidata com a busca semântica opcional pelo MCP do Wikidata e a assistência "
+"opcional de IA, para sugerir propriedades correspondentes para revisão "
+"humana."
+
+#: .\mapper\templates\home.html:13
+msgid "Import your ontology"
+msgstr "Importe sua ontologia"
+
+#: .\mapper\templates\home.html:14
+msgid "Upload your institution's metadata fields."
+msgstr "Envie os campos de metadados da sua instituição."
+
+#: .\mapper\templates\home.html:17
+msgid "Get suggestions"
+msgstr "Receba sugestões"
+
+#: .\mapper\templates\home.html:18
+msgid ""
+"NORA suggests matching properties from Wikidata or a Wikibase instance for "
+"each field."
+msgstr ""
+"A NORA sugere, para cada campo, propriedades correspondentes do Wikidata ou "
+"de uma instância Wikibase."
+
+#: .\mapper\templates\home.html:21
+msgid "Review each field"
+msgstr "Revise cada campo"
+
+#: .\mapper\templates\home.html:22
+msgid ""
+"Accept a suggestion, search for another property, mark the field as having "
+"no equivalent, or flag it as a modeling gap to draft a property proposal. AI "
+"help is optional and only runs when you ask for it."
+msgstr ""
+"Aceite uma sugestão, busque outra propriedade, marque o campo como sem "
+"equivalente ou indique uma lacuna de modelagem para rascunhar uma proposta "
+"de propriedade. A ajuda da IA é opcional e só é acionada quando você pede."
+
+#: .\mapper\templates\home.html:25
+msgid "Validate"
+msgstr "Valide"
+
+#: .\mapper\templates\home.html:26
+msgid "NORA checks datatypes and property constraints before export."
+msgstr ""
+"A NORA verifica tipos de dado e restrições das propriedades antes da "
+"exportação."
+
+#: .\mapper\templates\home.html:29
+msgid "Export"
+msgstr "Exporte"
+
+#: .\mapper\templates\home.html:30
+msgid ""
+"Download a package to reconcile and upload your data with OpenRefine or "
+"QuickStatements."
+msgstr ""
+"Baixe um pacote para reconciliar e carregar seus dados com o OpenRefine ou o "
+"QuickStatements."
+
+#: .\mapper\templates\home.html:35
+msgid "Create ontology"
+msgstr "Criar ontologia"
+
+#: .\mapper\templates\home.html:36
+msgid "List ontologies"
+msgstr "Listar ontologias"
+
+#: .\mapper\templates\import_fields.html:3
+#, python-format
+msgid "Import fields · %(title)s"
+msgstr "Importar campos · %(title)s"
+
+#: .\mapper\templates\import_fields.html:9
+msgid ""
+"Upload a CSV with one row per field of your ontology. Fields that already "
+"exist are skipped."
+msgstr ""
+"Envie um CSV com uma linha por campo da sua ontologia. Campos que já existem "
+"são ignorados."
+
+#: .\mapper\templates\import_fields.html:25
+msgid "Import"
+msgstr "Importar"
+
+#: .\mapper\templates\import_fields.html:26
+#: .\mapper\templates\ontology_form.html:33
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .\mapper\templates\list_ontologies.html:7
+msgid "Ontology mappings"
+msgstr "Mapeamentos de ontologias"
+
+#: .\mapper\templates\list_ontologies.html:8
+msgid "Choose an institutional ontology to review field by field."
+msgstr "Escolha uma ontologia institucional para revisar campo a campo."
+
+#: .\mapper\templates\list_ontologies.html:10
+#: .\mapper\templates\ontology_form.html:3
+#: .\mapper\templates\ontology_form.html:11
+msgid "Create new ontology mapping"
+msgstr "Criar novo mapeamento de ontologia"
+
+#: .\mapper\templates\list_ontologies.html:14
+msgid "Your mappings"
+msgstr "Seus mapeamentos"
+
+#: .\mapper\templates\list_ontologies.html:22
+msgid "You haven't created any ontology mappings yet."
+msgstr "Você ainda não criou nenhum mapeamento de ontologia."
+
+#: .\mapper\templates\list_ontologies.html:26
+msgid "Shared with you"
+msgstr "Compartilhados com você"
+
+#: .\mapper\templates\list_ontologies.html:34
+msgid "No public or shared ontology mappings yet."
+msgstr "Ainda não há mapeamentos de ontologia públicos ou compartilhados."
+
+#: .\mapper\templates\ontology_form.html:3
+#, python-format
+msgid "Edit ontology mapping · %(title)s"
+msgstr "Editar mapeamento de ontologia · %(title)s"
+
+#: .\mapper\templates\ontology_form.html:8
+msgid "Edit ontology mapping"
+msgstr "Editar mapeamento de ontologia"
+
+#: .\mapper\templates\ontology_form.html:12
+msgid ""
+"Register the institutional ontology that will be mapped to Wikidata or a "
+"Wikibase instance."
+msgstr ""
+"Cadastre a ontologia institucional que será mapeada para o Wikidata ou para "
+"uma instância Wikibase."
+
+#: .\mapper\templates\ontology_form.html:16
+msgid "Fields marked with * are required."
+msgstr "Os campos marcados com * são obrigatórios."
+
+#: .\mapper\templates\ontology_form.html:32 .\mapper\templates\review.html:162
+msgid "Save"
+msgstr "Salvar"
+
+#: .\mapper\templates\ontology_list_item.html:13
+msgid "Edit"
+msgstr "Editar"
+
+#: .\mapper\templates\ontology_list_item.html:15
+msgid "Delete this ontology and all its decisions? This cannot be undone."
+msgstr ""
+"Excluir esta ontologia e todas as suas decisões? Esta ação não pode ser "
+"desfeita."
+
+#: .\mapper\templates\review.html:3
+#, python-format
+msgid "Review · %(title)s"
+msgstr "Revisão · %(title)s"
+
+#: .\mapper\templates\review.html:9
+#, python-format
+msgid "%(done_count)s of %(total_fields)s fields reviewed · %(progress_pct)s%%"
+msgstr ""
+"%(done_count)s de %(total_fields)s campos revisados · %(progress_pct)s%%"
+
+#: .\mapper\templates\review.html:26
+msgid "AI suggestion"
+msgstr "Sugestão da IA"
+
+#: .\mapper\templates\review.html:29
+#, python-format
+msgid "confidence %(confidence)s"
+msgstr "confiança %(confidence)s"
+
+#: .\mapper\templates\review.html:51
+msgid "Both searches"
+msgstr "Ambas as buscas"
+
+#: .\mapper\templates\review.html:79
+msgid "Ask AI"
+msgstr "Perguntar à IA"
+
+#: .\mapper\templates\review.html:81
+msgid "AI provider settings"
+msgstr "Configurações do provedor de IA"
+
+#: .\mapper\templates\review.html:86
+msgid "Skip"
+msgstr "Pular"
+
+#: .\mapper\templates\review.html:92
+msgid "More options (manual search · modeling gap)"
+msgstr "Mais opções (busca manual · lacuna de modelagem)"
+
+#: .\mapper\templates\review.html:98
+msgid "Search a property or type its ID"
+msgstr "Busque uma propriedade ou digite o ID dela"
+
+#: .\mapper\templates\review.html:99
+msgid "e.g. creator or P170"
+msgstr "ex.: criador ou P170"
+
+#: .\mapper\templates\review.html:102
+msgid "Use this property"
+msgstr "Usar esta propriedade"
+
+#: .\mapper\templates\review.html:109
+msgid "Proposed label for the new property"
+msgstr "Rótulo proposto para a nova propriedade"
+
+#: .\mapper\templates\review.html:117
+msgid "Justification (written by you, never filled in by the AI)"
+msgstr "Justificativa (escrita por você, nunca preenchida pela IA)"
+
+#: .\mapper\templates\review.html:119
+msgid "Why does this field have no equivalent property?"
+msgstr "Por que este campo não tem propriedade equivalente?"
+
+#: .\mapper\templates\review.html:121
+msgid "Register modeling gap"
+msgstr "Registrar lacuna de modelagem"
+
+#: .\mapper\templates\review.html:126
+msgid "Back to ontology"
+msgstr "Voltar à ontologia"
+
+#: .\mapper\templates\review.html:147
+msgid "AI provider"
+msgstr "Provedor de IA"
+
+#: .\mapper\templates\review.html:148
+msgid ""
+"Your key stays in this browser tab and is erased when you close it. For "
+"online providers, NORA only forwards each request with it and never stores "
+"it."
+msgstr ""
+"Sua chave fica nesta aba do navegador e é apagada quando você a fecha. Para "
+"provedores on-line, a NORA apenas encaminha cada pedido com a chave e nunca "
+"a armazena."
+
+#: .\mapper\templates\review.html:150
+msgid "API URL (OpenAI-compatible)"
+msgstr "URL da API (compatível com OpenAI)"
+
+#: .\mapper\templates\review.html:154
+msgid "Model"
+msgstr "Modelo"
+
+#: .\mapper\templates\review.html:158
+msgid "API key"
+msgstr "Chave da API"
+
+#: .\mapper\templates\review.html:163
+msgid "Forget key"
+msgstr "Esquecer chave"
+
+#: .\mapper\templates\review.html:182
+msgid "Asking the AI…"
+msgstr "Consultando a IA…"
+
+#: .\mapper\templates\review.html:183
+msgid "The AI did not pick any of the candidates."
+msgstr "A IA não escolheu nenhuma das candidatas."
+
+#: .\mapper\templates\review.html:184
+msgid ""
+"The AI provider could not be reached. If it is a local model, check that it "
+"is running."
+msgstr ""
+"Não foi possível acessar o provedor de IA. Se for um modelo local, verifique "
+"se ele está em execução."
+
+#: .\mapper\templates\review.html:185
+msgid "The AI request failed:"
+msgstr "O pedido à IA falhou:"
+
+#: .\mapper\templates\review.html:186
+msgid ""
+"The API URL must start with https:// (http:// is only accepted for "
+"localhost)."
+msgstr ""
+"A URL da API precisa começar com https:// (http:// só é aceito para "
+"localhost)."
+
+#: .\mapper\templates\review.html:187
+msgid "An API key is required for online providers."
+msgstr "Provedores on-line exigem uma chave de API."
+
+#: .\mapper\templates\review.html:188
+msgid "Saved. Leave blank to keep it."
+msgstr "Salva. Deixe em branco para mantê-la."
+
+#: .\mapper\templates\review.html:189
+msgid "Not needed for a local model (localhost)."
+msgstr "Não é necessária para um modelo local (localhost)."
+
+#: .\mapper\urls.py:8
+msgid "Home"
+msgstr "Início"
+
+#: .\mapper\urls.py:9 .\templates\base.html:29
+msgid "About"
+msgstr "Sobre"
+
+#: .\mapper\views.py:43
+msgid "Ontology created!"
+msgstr "Ontologia criada!"
+
+#: .\mapper\views.py:105
+msgid "Ontology updated!"
+msgstr "Ontologia atualizada!"
+
+#: .\mapper\views.py:125
+msgid "Ontology deleted!"
+msgstr "Ontologia excluída!"
+
+#: .\mapper\views.py:208
+msgid "The AI answer could not be saved."
+msgstr "Não foi possível salvar a resposta da IA."
+
+#: .\mapper\views.py:317
+msgid "The file needs a 'name' column."
+msgstr "O arquivo precisa ter uma coluna 'name'."
+
+#: .\nora\settings.py:133
+msgid "English"
+msgstr "Inglês"
+
+#: .\nora\settings.py:134
+msgid "Brazilian Portuguese"
+msgstr "Português brasileiro"
+
+#: .\templates\base.html:12
+msgid "Ontology mapper"
+msgstr "Mapeador de ontologias"
+
+#: .\templates\base.html:26
+msgid "NORA"
+msgstr "NORA"
+
+#: .\templates\base.html:31
+msgid "Toggle dark mode"
+msgstr "Alternar modo escuro"
+
+#: .\templates\base.html:38
+msgid "Logged user"
+msgstr "Usuário(a) conectado(a)"
+
+#: .\templates\base.html:38
+#, python-format
+msgid "%(username)s"
+msgstr "%(username)s"
+
+#: .\templates\base.html:41
+msgid "Log out"
+msgstr "Sair"
+
+#: .\templates\base.html:47
+msgid "Log in"
+msgstr "Entrar"
+
+#: .\templates\base.html:63
+#, python-format
+msgid ""
+"This application was developed by <a href=\"%(url)s\"><i>Wikimedia Brasil</"
+"i></a>."
+msgstr ""
+"Esta aplicação foi desenvolvida pela <a href=\"%(url)s\"><i>Wikimedia "
+"Brasil</i></a>."

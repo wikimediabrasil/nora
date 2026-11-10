@@ -1,0 +1,7 @@
+Django>=5.0,<5.2
+social-auth-app-django>=5.4,<6.0
+requests>=2.31
+python-dotenv>=1.0
+mcp>=1.0
+pywin32; sys_platform == "win32"
+whitenoise

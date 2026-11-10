@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% blocktranslate with title=ontology.title %}Import fields · {{ title }}{% endblocktranslate %}{% endblock %}
+{% block content %}
+    <div class="w3-quarter w3-hide-small">&nbsp;</div>
+    <div class="w3-half">
+        <h1>{% translate "Import fields" %}</h1>
+        <h2 class="subtitle">{{ ontology }}</h2>
+        <p>{% translate "Upload a CSV with one row per field of your ontology. Fields that already exist are skipped." %}</p>
+        <pre>name,description,datatype,sample_value
+title,Title of the object,string,Postcard of Avenida Paulista
+date,Date of creation,time,1925</pre>
+
+        <form method="post" enctype="multipart/form-data" class="form">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-field">
+                    <label for="{{ field.id_for_label }}">{{ field.label }} <span class="required" aria-hidden="true">*</span></label>
+                    {{ field }}
+                    {% if field.help_text %}<small class="help" id="{{ field.auto_id }}_helptext">{{ field.help_text }}</small>{% endif %}
+                    {% if field.errors %}<div class="error">{{ field.errors }}</div>{% endif %}
+                </div>
+            {% endfor %}
+            <div class="actions">
+                <button type="submit">{% translate "Import" %}</button>
+                <a href="{% url 'detail_ontology' ontology.id %}" class="custom_button secondary">{% translate "Cancel" %}</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

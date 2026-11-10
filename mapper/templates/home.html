@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="w3-quarter w3-hide-small">&nbsp;</div>
+    <div class="w3-half">
+        <div class="w3-row block-section">
+            <p>{% blocktrans %}<b>N.O.R.A.</b> (<b>N</b>exus of <b>O</b>ntologies with <b>R</b>econciliation <b>A</b>ssistance) is a web application that helps one map ontologies to a Wikibase instance, such as Wikidata, combining live search on Wikidata with optional semantic search through the Wikidata MCP and optional AI assistance, to suggest matching properties for human review.{% endblocktrans %}</p>
+            <ol class="timeline">
+                <li>
+                    <h3>{% translate "Import your ontology" %}</h3>
+                    <p>{% blocktranslate %}Upload your institution's metadata fields.{% endblocktranslate %}</p>
+                </li>
+                <li>
+                    <h3>{% translate "Get suggestions" %}</h3>
+                    <p>{% blocktranslate %}NORA suggests matching properties from Wikidata or a Wikibase instance for each field.{% endblocktranslate %}</p>
+                </li>
+                <li>
+                    <h3>{% translate "Review each field" %}</h3>
+                    <p>{% blocktranslate %}Accept a suggestion, search for another property, mark the field as having no equivalent, or flag it as a modeling gap to draft a property proposal. AI help is optional and only runs when you ask for it.{% endblocktranslate %}</p>
+                </li>
+                <li>
+                    <h3>{% translate "Validate" %}</h3>
+                    <p>{% blocktranslate %}NORA checks datatypes and property constraints before export.{% endblocktranslate %}</p>
+                </li>
+                <li>
+                    <h3>{% translate "Export" %}</h3>
+                    <p>{% blocktranslate %}Download a package to reconcile and upload your data with OpenRefine or QuickStatements.{% endblocktranslate %}</p>
+                </li>
+            </ol>
+        </div>
+        <div class="w3-row block-section actions">
+            <a href="{% url 'create_ontology' %}" class="custom_button">{% translate "Create ontology" %}</a>
+            <a href="{% url 'list_ontologies' %}" class="custom_button secondary">{% translate "List ontologies" %}</a>
+        </div>
+    </div>
+{% endblock %}

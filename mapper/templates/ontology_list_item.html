@@ -1,0 +1,21 @@
+{% load i18n %}
+<li>
+    <h3><a href="{% url 'detail_ontology' ontology.id %}">{{ ontology.title }}</a></h3>
+    <p class="help">
+        {% with total=ontology.fields.count %}
+            {{ ontology.institution }} · {{ ontology.get_deployment_mode_display }} · {{ ontology.get_visibility_display }} ·
+            {% blocktranslate count total=total %}{{ total }} field{% plural %}{{ total }} fields{% endblocktranslate %}
+        {% endwith %}
+    </p>
+    {% if ontology.description %}<p>{{ ontology.description }}</p>{% endif %}
+    {% if owner %}
+        <div class="detail-actions">
+            <a href="{% url 'update_ontology' ontology.id %}" class="custom_button">{% translate "Edit" %}</a>
+            <a href="{% url 'review' ontology.id %}" class="custom_button">{% translate "Review" %}</a>
+            <form method="post" action="{% url 'delete_ontology' ontology.id %}" onsubmit="return confirm('{% translate "Delete this ontology and all its decisions? This cannot be undone." %}');">
+                {% csrf_token %}
+                <button type="submit" class="danger">{% translate "Delete" %}</button>
+            </form>
+        </div>
+    {% endif %}
+</li>

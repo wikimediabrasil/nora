@@ -1,0 +1,11 @@
+[run]
+source = mapper, nora
+omit =
+    */migrations/*
+    */tests/*
+    */nora/wsgi.py
+    */manage.py
+
+[report]
+show_missing = True
+skip_covered = True

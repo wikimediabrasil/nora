@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="w3-quarter w3-hide-small">&nbsp;</div>
+    <div class="w3-half about">
+        <h1>{% translate "About NORA" %}</h1>
+        <p class="subtitle">{% blocktranslate %}<b>N</b>exus of <b>O</b>ntologies with <b>R</b>econciliation <b>A</b>ssistance{% endblocktranslate %}</p>
+
+        <h2>{% translate "Why NORA exists" %}</h2>
+        <p>{% blocktranslate %}Museums, archives, libraries and research centres that want to share their collections on Wikidata first have to map the fields of their own metadata ontologies to Wikidata properties. Today this is done by hand, and it depends on advanced knowledge of Wikidata search and modeling.{% endblocktranslate %}</p>
+        <p>{% translate "NORA was built to address four recurring problems:" %}</p>
+        <ul>
+            <li>{% blocktranslate %}<b>A steep learning curve</b>, which limits the autonomy of institutions and can raise their costs.{% endblocktranslate %}</li>
+            <li>{% blocktranslate %}<b>Modeling gaps that go unreported</b>: when no property fits, institutions tend to settle for an incomplete model, with no channel to raise the gap.{% endblocktranslate %}</li>
+            <li>{% blocktranslate %}<b>Decisions that are not reused</b>: each new mapping usually starts from scratch.{% endblocktranslate %}</li>
+            <li>{% blocktranslate %}<b>Structural errors</b>: without checking datatypes and constraints, wrong mappings reach batch-editing tools.{% endblocktranslate %}</li>
+        </ul>
+
+        <h2>{% translate "How AI is used, and how it is not" %}</h2>
+        <p>{% blocktranslate %}Candidate properties come from a live search on Wikidata (or on your own Wikibase) and, optionally, from the Wikidata MCP. AI help is only called when the reviewer asks for it, with the reviewer's own key, and it can only choose among the candidates already on screen. Its justification is always shown next to its suggestion.{% endblocktranslate %}</p>
+        <p>{% blocktranslate %}<b>Every decision is made by a person.</b> No mapping is accepted, rejected or exported without human review.{% endblocktranslate %}</p>
+
+        <h2>{% translate "Wikimedia Brasil's Plan of Activities" %}</h2>
+        <p>{% blocktranslate %}NORA is part of the deliverable <i><a href="https://meta.wikimedia.org/wiki/Wikimedia_Brasil/Plan_of_Activities_2026#AI_Integration_for_Wikimedia" title="Wikimedia Brasil Plan of activities">AI Integration for Wikimedia</a></i>, in Wikimedia Brasil's Plan of Activities for 2026. The deliverable looks at the risks and potential of using AI in smaller-scale Wikimedia projects, keeping human oversight at the centre of the editorial process.{% endblocktranslate %}</p>
+
+        <h2>{% translate "The technical development plan" %}</h2>
+        <p>{% blocktranslate with url="https://commons.wikimedia.org/wiki/File:Ontology_Mapper_-_Technical_Development_Plan_-_en.pdf" %}NORA follows a <a href="{{ url }}">technical development plan</a> that defines its scope and safeguards:{% endblocktranslate %}</p>
+        <ul>
+            <li>{% blocktranslate %}<b>Mandatory human review</b> of every field, with five options: valid, no equivalent, ambiguous, manual search and modeling gap.{% endblocktranslate %}</li>
+            <li>{% blocktranslate %}<b>Modeling gaps become property proposal drafts</b>, with the justification written by the reviewer, never by the AI.{% endblocktranslate %}</li>
+            <li>{% blocktranslate %}<b>Structural validation</b> of datatypes and constraints before export.{% endblocktranslate %}</li>
+            <li>{% blocktranslate %}<b>Two deployment modes</b>: mapping directly to Wikidata, or to an institution's own Wikibase, federated with Wikidata.{% endblocktranslate %}</li>
+            <li>{% blocktranslate %}<b>Open, interoperable export</b>: a Frictionless Data package compatible with QuickStatements and OpenRefine.{% endblocktranslate %}</li>
+        </ul>
+
+        <h2>{% translate "AI-BRIDGES" %}</h2>
+        <p>{% blocktranslate %}NORA is also developed as part of Wikimedia Brasil's activities on AI-BRIDGES, a collaborative research project that connects institutions, open knowledge infrastructures and AI systems, turning shared challenges into practical workflows and tools. Its pillars are research through practice, holistic and multilingual data practices, collaboration through partnerships (institutions as partners, not data sources), and the long-term stewardship of knowledge as a commons.{% endblocktranslate %}</p>
+        <p>{% blocktranslate %}Within AI-BRIDGES, NORA follows three requirements: the sovereignty of human curation, learning from past decisions, and making visible the structural gaps of Wikidata for ontologies from the Global South.{% endblocktranslate %}</p>
+        <p>{% blocktranslate %}The specific idea for NORA came from one of the round tables at the AI-BRIDGES Symposium, in May 2026.{% endblocktranslate %}</p>
+        
+        <h2>{% translate "CDTIC" %}</h2>
+        <p>{% blocktranslate %}NORA also connects to Wikimedia Brasil's work at the Centre for Digitisation and Intelligent Treatment of Collections (CDTIC), supported by FAPESP. There, Wikimedia Brasil develops a roundtripping workflow between collection data and the Wikimedia projects, carried forward in the Plan of Activities as the deliverable <a href="https://w.wiki/gqyV" title="WMB Collections Intelligence main delivery page">Collections Intelligence</a>.{% endblocktranslate %}</p>
+        <p>{% blocktranslate %}Mapping an institution's ontology schema to Wikidata is the first step of any roundtripping, and it is usually done by hand, field by field. NORA turns that step into a reviewable process: the museum's own team decides on each mapping, the decisions are recorded and reused, and the fields with no equivalent in Wikidata are documented as modeling gaps rather than forced into ill-fitting properties. The federated Wikibase mode fits institutions that want to keep their data under their own stewardship while staying linked to Wikidata.{% endblocktranslate %}</p>
+        
+        <h2>{% translate "Who maintains it" %}</h2>
+        <p>{% blocktranslate %}NORA is open source and maintained by Wikimedia Brasil's Products and Technology team. Bug reports, feature requests and contributions from community developers are welcome.{% endblocktranslate %}</p>
+        <hr>
+        <p>
+            <small>
+                {% blocktranslate with url="https://www.djangoproject.com/" %}This app was developed in <a target="_blank" rel="noopener" href="{{ url }}"><i>Django</i></a>.{% endblocktranslate %}<br>
+                {% blocktranslate with url="https://github.com/wikimediabrasil/nora" %}The source code is available on <a target="_blank" rel="noopener" href="{{ url }}">GitHub</a>.{% endblocktranslate %}<br>
+                {% blocktranslate with url="https://github.com/wikimediabrasil/nora/LICENSE" %}Source code license: <a target="_blank" rel="noopener" href="{{ url }}">MIT</a>.{% endblocktranslate %}<br>
+                {% blocktranslate with url="https://creativecommons.org/licenses/by-sa/4.0/" %}Text license: <a target="_blank" rel="noopener" href="{{ url }}">CC BY-SA 4.0 International</a>.{% endblocktranslate %}<br>
+                {% blocktranslate with url="https://creativecommons.org/publicdomain/zero/1.0/" %}Wikidata data license: <a target="_blank" rel="noopener" href="{{ url }}">CC0</a>.{% endblocktranslate %}<br>
+                {% blocktranslate with version="1.0" %}Version {{ version }}.{% endblocktranslate %}
+            </small>
+        </p>
+    </div>
+{% endblock %}

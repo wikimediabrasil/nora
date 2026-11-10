@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ ontology.title }}{% endblock %}
+{% block content %}
+    <div class="w3-quarter w3-hide-small">&nbsp;</div>
+    <div class="w3-half">
+        <div class="w3-row">
+            <h1>{{ ontology.title }}</h1>
+            <p class="help">
+                {% with created=ontology.created_at|date:"SHORT_DATETIME_FORMAT" updated=ontology.updated_at|date:"SHORT_DATETIME_FORMAT" %}
+                    {% if ontology.created_by %}{% blocktranslate with by=ontology.created_by %}Created on {{ created }} by {{ by }}{% endblocktranslate %}{% else %}{% blocktranslate %}Created on {{ created }}{% endblocktranslate %}{% endif %} · {% if ontology.updated_by %}{% blocktranslate with by=ontology.updated_by %}Updated on {{ updated }} by {{ by }}{% endblocktranslate %}{% else %}{% blocktranslate %}Updated on {{ updated }}{% endblocktranslate %}{% endif %}
+                {% endwith %}
+            </p>
+            <p class="subtitle">{{ ontology.institution }} · {{ ontology.get_deployment_mode_display }} · {{ ontology.get_visibility_display }}</p>
+        </div>
+        <div class="w3-row">
+            {% if ontology.description %}
+                <p>{{ ontology.description }}</p>
+            {% endif %}
+            {% if ontology.deployment_mode == "wikibase" and ontology.wikibase_sparql_endpoint %}
+                <p>{% translate "SPARQL endpoint:" %} <a href="{{ ontology.wikibase_sparql_endpoint }}">{{ ontology.wikibase_sparql_endpoint }}</a></p>
+            {% endif %}
+        </div>
+        <div class="detail-actions">
+            {% if can_edit and fields %}
+                <a href="{% url 'review' ontology.id %}" class="custom_button">{% translate "Review fields" %}</a>
+            {% endif %}
+            {% if can_edit %}
+                <a href="{% url 'import_fields' ontology.id %}" class="custom_button secondary">{% translate "Import fields" %}</a>
+            {% endif %}
+            {% if fields %}
+                <a href="{% url 'export' ontology.id %}" class="custom_button secondary">{% translate "Export ontology" %}</a>
+            {% endif %}
+            {% if can_edit %}
+                <a href="{% url 'update_ontology' ontology.id %}" class="custom_button secondary">{% translate "Edit ontology" %}</a>
+                {% if fields %}
+                    <form method="post" action="{% url 'reset_ontology' ontology.id %}"
+                          onsubmit="return confirm('{% translate "Erase all decisions of this ontology and put every field back in the review queue? This cannot be undone!" %}');">
+                        {% csrf_token %}
+                        <button type="submit" class="secondary-button">{% translate "Reset decisions" %}</button>
+                    </form>
+                {% endif %}
+                <form method="post" action="{% url 'delete_ontology' ontology.id %}"
+                      onsubmit="return confirm('{% translate "Delete this ontology and all its decisions? This cannot be undone!" %}');">
+                    {% csrf_token %}
+                    <button type="submit" class="danger">{% translate "Delete" %}</button>
+                </form>
+            {% endif %}
+        </div>
+        <div class="w3-row">
+            <h2>{% blocktranslate count total=fields|length %}{{ total }} field{% plural %}{{ total }} fields{% endblocktranslate %}</h2>
+            {% if fields %}
+                <div class="table-scroll">
+                    <table><caption>{% translate "Fields table" %}</caption>
+                        <tr>
+                            <th scope="col">{% translate "Field" %}</th>
+                            <th scope="col">{% translate "Description" %}</th>
+                            <th scope="col">{% translate "Type" %}</th>
+                            <th scope="col">{% translate "Example" %}</th>
+                            <th scope="col">{% translate "Status" %}</th>
+                            <th scope="col">{% translate "Property" %}</th>
+                            <th scope="col"><span class="visually-hidden">{% translate "Actions" %}</span></th>
+                        </tr>
+                        {% for field in fields %}
+                            <tr>
+                                <td>{{ field.name }}</td>
+                                <td>{{ field.description }}</td>
+                                <td>{{ field.datatype }}</td>
+                                <td>{{ field.sample_value }}</td>
+                                <td>{% if field.decision %}{{ field.decision.get_status_display }}{% else %}{% translate "Pending" %}{% endif %}</td>
+                                <td>
+                                    {% if field.decision.chosen_property %}
+                                        {{ field.decision.chosen_property.pid }} — {{ field.decision.chosen_property.label }}
+                                    {% endif %}
+                                </td>
+                                <td><a href="{% url 'review_field' ontology.id field.id %}">{% translate "Review" %}</a></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% else %}
+                <p>{% translate "This ontology has no fields yet." %}</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

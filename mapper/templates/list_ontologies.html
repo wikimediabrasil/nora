@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Ontologies" %}{% endblock %}
+{% block content %}
+    <div class="page-header">
+        <div>
+            <h1>{% translate "Ontology mappings" %}</h1>
+            <p class="subtitle">{% translate "Choose an institutional ontology to review field by field." %}</p>
+        </div>
+        <a href="{% url 'create_ontology' %}" class="custom_button">{% translate "Create new ontology mapping" %}</a>
+    </div>
+
+    {% if user.is_authenticated %}
+        <h2>{% translate "Your mappings" %}</h2>
+        {% if owned_by_user %}
+            <ul class="ontology-list">
+                {% for ontology in owned_by_user %}
+                    {% include "ontology_list_item.html" with owner=True %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{% translate "You haven't created any ontology mappings yet." %}</p>
+        {% endif %}
+    {% endif %}
+
+    <h2>{% translate "Shared with you" %}</h2>
+    {% if ontologies_allowed %}
+        <ul class="ontology-list">
+            {% for ontology in ontologies_allowed %}
+                {% include "ontology_list_item.html" with owner=False %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{% translate "No public or shared ontology mappings yet." %}</p>
+    {% endif %}
+{% endblock %}

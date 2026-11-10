@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% if ontology %}{% blocktranslate with title=ontology.title %}Edit ontology mapping · {{ title }}{% endblocktranslate %}{% else %}{% translate "Create new ontology mapping" %}{% endif %}{% endblock %}
+{% block content %}
+    <div class="w3-quarter w3-hide-small">&nbsp;</div>
+    <div class="w3-half">
+        {% if ontology %}
+            <h1>{% translate "Edit ontology mapping" %}</h1>
+            <p class="subtitle">{{ ontology }}</p>
+        {% else %}
+            <h1>{% translate "Create new ontology mapping" %}</h1>
+            <p class="subtitle">{% translate "Register the institutional ontology that will be mapped to Wikidata or a Wikibase instance." %}</p>
+        {% endif %}
+
+        <form method="post" class="form">
+            <p class="help">{% translate "Fields marked with * are required." %}</p>
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="error">{{ form.non_field_errors }}</div>
+            {% endif %}
+
+            {% for field in form %}
+                <div class="form-field">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required" aria-hidden="true">*</span>{% endif %}</label>
+                    {% if field.help_text %}<small class="help" id="{{ field.auto_id }}_helptext">{{ field.help_text }}</small>{% endif %}
+                    {{ field }}
+                    {% if field.errors %}<div class="error">{{ field.errors }}</div>{% endif %}
+                </div>
+            {% endfor %}
+
+            <div class="actions">
+                <button type="submit">{% translate "Save" %}</button>
+                <a href="{% url 'list_ontologies' %}" class="custom_button">{% translate "Cancel" %}</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        function toggleFields(controlId, value, fieldIds) {
+          const control = document.getElementById(controlId);
+          function update() {
+            fieldIds.forEach(function (id) {
+              document.getElementById(id).closest(".form-field").style.display =
+                control.value === value ? "" : "none";
+            });
+          }
+          control.addEventListener("change", update);
+          update();
+        }
+        toggleFields("id_visibility", "restricted", ["id_authorized_usernames"]);
+        toggleFields("id_deployment_mode", "wikibase", ["id_wikibase_sparql_endpoint", "id_wikibase_api_endpoint"]);
+    </script>
+{% endblock %}
