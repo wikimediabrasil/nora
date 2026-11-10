@@ -225,3 +225,8 @@ footer { margin-top: 1em; }
 /* FOOTER */
 .site-footer { margin-top: 3em; padding: 1.5em 1em; text-align: center; background: var(--surface); }
 .site-footer p { margin: 0; }
+
+@media (max-width: 600px) {
+    .navbar, .navbar div { gap: 1em; }
+    .navbar > div { width: 100%; justify-content: space-around; }
+}

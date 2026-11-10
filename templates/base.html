@@ -30,6 +30,8 @@
         </h1>
         <a href="{% url 'about' %}">{% translate "About" %}</a>
         <a href="{% url 'list_ontologies' %}">{% translate "Ontologies" %}</a>
+    </div>
+    <div>
         <button type="button" id="theme-toggle" class="theme-toggle" aria-label="{% translate 'Toggle dark mode' %}" aria-expanded="false">
             <i class="fa-solid fa-moon theme-moon"></i>
             <i class="fa-solid fa-sun theme-sun"></i>
@@ -42,15 +44,13 @@
             </label>
             <select id="language-select" name="language" aria-label="{% translate 'Language' %}" onchange="this.form.submit()">
                 {% for language in languages %}
-                    <option value="{{ language.code }}" lang="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>{{ language.name_local }}</option>
+                    <option value="{{ language.code }}" lang="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>{{ language.code }}</option>
                 {% endfor %}
             </select>
             <noscript><button type="submit">{% translate "Change" %}</button></noscript>
         </form>
-    </div>
-    <div>
         {% if user.is_authenticated %}
-            <span style="" class="username" title="{% translate 'Logged user' %}">{% blocktranslate with username=user.username %}{{ username }}{% endblocktranslate %}</span>
+            <span class="username" title="{% translate 'Logged user' %}">{% blocktranslate with username=user.username %}{{ username }}{% endblocktranslate %}</span>
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button type="submit">{% translate "Log out" %}</button>
