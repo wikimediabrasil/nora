@@ -6,6 +6,8 @@ The AI key belongs to each user and lives in their browser, never in these setti
 """
 
 import os
+import configparser
+
 from pathlib import Path
 
 from django.utils.translation import gettext_lazy as _
@@ -81,11 +83,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "nora.wsgi.application"
 
+HOME=os.environ.get('HOME')
+
+replica_path=HOME + '/replica.my.cnf'
+if os.path.exists(replica_path):
+    config = configparser.ConfigParser()
+    config.read(replica_path)
+else:
+    print('replica.my.cnf file not found')
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 's58364__nora',
+         'USER': config['client']['user'],
+         'PASSWORD': config['client']['password'],
+         'HOST': 'tools.db.svc.wikimedia.cloud',
+         'PORT': '',
+     }
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
